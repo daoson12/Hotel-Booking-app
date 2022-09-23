@@ -1,4 +1,4 @@
-import { HotelListComponent } from './components/hotel/hotel-list/hotel-list.component';
+import { HotelListComponent } from './components/hostel/hotel-list/hotel-list.component';
 import { LandingPageComponent } from './layouts/landing-page/landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
