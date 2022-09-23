@@ -13,3 +13,4 @@ narration: the user authentication allows you to
     • book available room
     • cancel booking
     • start date and end date (once the date is due the room should be open for booking)
+    
