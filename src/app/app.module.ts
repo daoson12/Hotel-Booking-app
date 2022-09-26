@@ -1,5 +1,5 @@
-import { HotelDetailComponent } from './components/hostel/hotel-detail/hotel-detail.component';
-import { HotelListComponent } from './components/hostel/hotel-list/hotel-list.component';
+import { HotelDetailComponent } from './components/hotel/hotel-detail/hotel-detail.component';
+import { HotelListComponent } from './components/hotel/hotel-list/hotel-list.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
