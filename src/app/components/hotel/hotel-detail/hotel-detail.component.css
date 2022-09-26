@@ -1,0 +1,21 @@
+
+
+
+@media only screen and (max-width: 640px) and (min-width: 360px)  {
+  .main-container {
+    padding-right: 41px;
+    visibility: visible;
+    animation-delay: 0.3s;
+    animation-name: fadeInUp;
+    padding-left: 41px;
+    margin-bottom: -170px;
+  }
+}
+
+.second-container{
+
+  padding: 36px;
+  margin-bottom: 207px;
+  border: solid 1px;
+  color: green;
+}
