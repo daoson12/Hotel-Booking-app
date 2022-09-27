@@ -1,4 +1,5 @@
 # BookaRoomApp
+The project hotel management system is a web based application that allows the hotel manager to handle all hotel activities online. Interactive GUI and the ability to manage various hotel bookings and rooms make this system very flexible and convenient. The hotel manager is a very busy person and does not have the time to sit and manage the entire activities manually on paper. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
