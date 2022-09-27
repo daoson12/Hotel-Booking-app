@@ -1,3 +1,4 @@
+import { HomeComponent } from './layouts/home/home.component';
 import { SignInComponent } from './security/sign-in/sign-in.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { HotelDetailComponent } from './components/hotel/hotel-detail/hotel-detail.component';
@@ -20,7 +21,8 @@ import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
     HotelListComponent,
     HotelDetailComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+@media only screen and (max-width: 640px) and (min-width: 360px) {
+  .main-container {
+    padding-right: 41px;
+    visibility: visible;
+    animation-delay: 0.3s;
+    animation-name: fadeInUp;
+    padding-left: 41px;
+    margin-bottom: -170px;
+  }
+}
+
+.second-container {
+  padding: 36px;
+  margin-bottom: 207px;
+  /* border: solid 1px; */
+  /* color: green; */
+}
+.form-btn .btn {
+  margin-top: 30px;
+  height: 50px;
+  padding: 0.8rem;
+  margin-left: -162px;
+  width: 464px;
+}
+.prim_btn {
+  background-color: green;
+  color: #fff;
+  border: 2px solid green;
+}
+.prim_btn:hover {
+  color: green;
+  background-color: #fff;
+  border: 2px solid green;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.4s;
+  z-index: 1;
+}
+

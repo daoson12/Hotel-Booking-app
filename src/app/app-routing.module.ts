@@ -1,3 +1,4 @@
+import { HomeComponent } from './layouts/home/home.component';
 import { SignInComponent } from './security/sign-in/sign-in.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { HotelDetailComponent } from './components/hotel/hotel-detail/hotel-detail.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'hotel-list', component:HotelListComponent},
   {path:'hotel-detail/:id', component:HotelDetailComponent},
   {path:'sign-up', component:SignUpComponent},
-  {path:'sign-in', component:SignInComponent}
+  {path:'sign-in', component:SignInComponent},
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({
