@@ -13,9 +13,8 @@
 }
 
 .second-container{
-
   padding: 36px;
   margin-bottom: 207px;
-  border: solid 1px;
+  /* border: solid 1px; */
   color: green;
 }

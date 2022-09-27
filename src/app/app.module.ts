@@ -1,3 +1,5 @@
+import { SignInComponent } from './security/sign-in/sign-in.component';
+import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { HotelDetailComponent } from './components/hotel/hotel-detail/hotel-detail.component';
 import { HotelListComponent } from './components/hotel/hotel-list/hotel-list.component';
 import { NgModule } from '@angular/core';
@@ -16,7 +18,9 @@ import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
     LandingPageComponent,
     NavBarComponent,
     HotelListComponent,
-    HotelDetailComponent
+    HotelDetailComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
