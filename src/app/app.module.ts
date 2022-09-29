@@ -1,3 +1,4 @@
+import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { AuthInterceptor } from './security/helper/auth.interceptor';
 import { AuthService } from './security/helper/auth.service';
 import { HomeComponent } from './layouts/home/home.component';
@@ -14,6 +15,7 @@ import { LandingPageComponent } from './layouts/landing-page/landing-page.compon
 import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeNavbarComponent } from './layouts/home-navbar/home-navbar.component';
 
 
 
@@ -26,7 +28,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HotelDetailComponent,
     SignUpComponent,
     SignInComponent,
-    HomeComponent
+    HomeComponent,
+    HomeNavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
