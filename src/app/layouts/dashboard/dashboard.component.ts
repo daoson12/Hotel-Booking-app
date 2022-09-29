@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
   salutation!: string;
-
-  constructor() { }
-  loggedInUser: any = JSON.parse(sessionStorage.getItem('loggedInUser')||'');
+  time = new Date();
+  todayDate = new Date();
+  intervalId: any | undefined;
+  subscription!: Subscription;
+  constructor() {}
+  loggedInUser: any = JSON.parse(sessionStorage.getItem('loggedInUser') || '');
 
   ngOnInit() {
-    this.salutation=this.GetSalutation()
+    // Using Basic Interval
+    this.intervalId = setInterval(() => {
+      this.time = new Date();
+    }, 1000);
+    this.salutation = this.GetSalutation();
   }
 
-  GetSalutation():string {
-    var today = new Date()
-    var curHr = today.getHours()
+  GetSalutation(): string {
+    var today = new Date();
+    var curHr = today.getHours();
     if (curHr < 12) {
       return 'Good morning';
     } else if (curHr < 18) {
@@ -26,5 +34,10 @@ export class DashboardComponent implements OnInit {
       return 'Good evening';
     }
   }
-
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }
