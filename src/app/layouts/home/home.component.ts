@@ -1,3 +1,4 @@
+import { SessionService } from './../../security/helper/session.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sessionService: SessionService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
 
-  logout() {
-    this.router.navigate(['sign-in']);
+  }
+
+  log0ut(){
+    this.sessionService.logout()
+    this.router.navigate(['/sign-in'])
+
   }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl:'http://192.168.152.9:9000/swagger/swagger-ui/index.html'
+  baseUrl:'http://192.168.152.9:9000/'
 };
 
 /*

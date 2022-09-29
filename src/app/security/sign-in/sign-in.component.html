@@ -95,7 +95,7 @@
     >
       <div class="property-item rounded" style="margin-left: 38px">
         <div class="container-fuild second-container">
-          <form class="row g-3">
+          <form class="row g-3" [formGroup]="signInForm">
             <div class="px-30 py-10 text-left">
               <a class="link-effect font-w700" style="color: green">
                 <span class="font-size-xl font-size-lg">House of </span
@@ -109,11 +109,11 @@
 
             <div class="col-12 mb-2">
               <label class="form-label">Username</label>
-              <input type="text" class="form-control form-control-lg" />
+              <input type="text" class="form-control form-control-lg" formControlName="username"/>
             </div>
             <div class="col-12 mb-2">
               <label class="form-label">Password</label>
-              <input type="text" class="form-control form-control-lg" />
+              <input type="text" class="form-control form-control-lg" formControlName="password" />
             </div>
             <div class="col-auto mb-1">
               <div class="form-check">
