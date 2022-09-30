@@ -11,7 +11,6 @@ export class DashboardComponent implements OnInit {
   time = new Date();
   todayDate = new Date();
   intervalId: any | undefined;
-  subscription!: Subscription;
   constructor() {}
   loggedInUser: any = JSON.parse(sessionStorage.getItem('loggedInUser') || '');
 
@@ -20,6 +19,7 @@ export class DashboardComponent implements OnInit {
     this.intervalId = setInterval(() => {
       this.time = new Date();
     }, 1000);
+
     this.salutation = this.GetSalutation();
   }
 
@@ -34,10 +34,8 @@ export class DashboardComponent implements OnInit {
       return 'Good evening';
     }
   }
+
   ngOnDestroy() {
     clearInterval(this.intervalId);
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
   }
 }
