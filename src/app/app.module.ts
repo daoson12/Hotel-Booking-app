@@ -1,3 +1,4 @@
+import { HotelLocationComponent } from './components/hotel/hotel-location/hotel-location.component';
 import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { AuthInterceptor } from './security/helper/auth.interceptor';
 import { AuthService } from './security/helper/auth.service';
@@ -17,6 +18,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeNavbarComponent } from './layouts/home-navbar/home-navbar.component';
 
+import {ChartsModule} from 'ng2-charts'
+
 
 
 @NgModule({
@@ -30,7 +33,8 @@ import { HomeNavbarComponent } from './layouts/home-navbar/home-navbar.component
     SignInComponent,
     HomeComponent,
     HomeNavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    HotelLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { HomeNavbarComponent } from './layouts/home-navbar/home-navbar.component
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ChartsModule
 
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

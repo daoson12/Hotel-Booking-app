@@ -62,3 +62,20 @@
 .bg-warning {
   background-color: #f0c356 !important;
 }
+
+
+.barCard{
+  background: white;
+  color: black;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.welcom{
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  border: 1px solid #ECEDF1;
+  justify-content: space-between;
+  color: white;
+}

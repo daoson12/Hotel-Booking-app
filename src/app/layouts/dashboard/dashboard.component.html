@@ -122,4 +122,20 @@
       </div>
     </div>
   </div>
+  <div class="col-sm-12 col-lg-6 col-md-12">
+    <div class="card welcom">
+      <div class="card-header barCard">
+        <div class="card-title">
+          Sales Progress
+        </div>
+      </div>
+      <div class=" card-body">
+        <div style="display: block">
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
