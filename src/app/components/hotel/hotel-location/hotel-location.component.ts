@@ -61,8 +61,8 @@ export class HotelLocationComponent implements OnInit {
     this.config.currentPage = event;
   }
 
-  deleteLocation(id: string){
-    this.hotelService.deleteLocation(id)
+  deleteLocation(name: string){
+    this.hotelService.deleteLocation(name)
     .pipe(first())
     .subscribe({
       next:(res:any) =>{
