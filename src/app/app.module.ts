@@ -17,8 +17,9 @@ import { NavBarComponent } from './layouts/nav-bar/nav-bar.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeNavbarComponent } from './layouts/home-navbar/home-navbar.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import {ChartsModule} from 'ng2-charts'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -42,8 +43,9 @@ import {ChartsModule} from 'ng2-charts'
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    ChartsModule
-
+    ChartsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

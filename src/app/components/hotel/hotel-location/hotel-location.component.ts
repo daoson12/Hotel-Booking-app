@@ -9,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel-location.component.css'],
 })
 export class HotelLocationComponent implements OnInit {
-  hotelLocationList: any;
+  hotelLocationList:  any =[];
   locationForm: any = FormGroup;
-
+  config!: { itemsPerPage: number; currentPage: number; totalItems: any; };
+  searchfilter!:any;
   constructor(
     private hotelService: HotelService,
-    private sessionService: SessionService,
     private fb: FormBuilder
   ) {}
 
@@ -23,6 +23,11 @@ export class HotelLocationComponent implements OnInit {
       name: ['', Validators.required],
     });
 
+    this.config = {
+      itemsPerPage: 6,
+      currentPage: 1,
+      totalItems: this.hotelLocationList.length
+    };
     this.getAllLocation()
   }
 
@@ -41,5 +46,9 @@ export class HotelLocationComponent implements OnInit {
         this.getAllLocation()
       }
     )
+  }
+
+  pageChanged(event:any){
+    this.config.currentPage = event;
   }
 }

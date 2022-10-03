@@ -1,39 +1,56 @@
-
 <div class="row mt-4">
   <div class="col-sm-12 col-lg-6 col-md-12">
-
-        <div class="card barCard">
-          <div class="card-body">
-
-              <form class="form" [formGroup]="locationForm">
-                <div class="form-group row mb-2">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label" style="font-weight: bolder; color: black;">Location</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Enter location" formControlName="name" >
-                  </div>
-                </div>
-                <div class="form-group row mb-2">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
-                  <div class="col-sm-10">
-                    <button (click)="addLocation()" type="button" class="btn btn-primary mb-2"> <i class="fa fa-plus" aria-hidden="true"></i> Save</button>
-                  </div>
-                </div>
-
-              </form>
-
-
+    <div class="card barCard">
+      <div class="card-body">
+        <form class="form" [formGroup]="locationForm">
+          <div class="form-group row mb-2">
+            <label
+              for="inputEmail3"
+              class="col-sm-2 col-form-label"
+              style="font-weight: bolder; color: black"
+              >Location</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter location"
+                formControlName="name"
+              />
+            </div>
           </div>
-        </div>
-
+          <div class="form-group row mb-2">
+            <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+              <button
+                (click)="addLocation()"
+                type="button"
+                class="btn btn-primary mb-2"
+              >
+                <i class="fa fa-plus" aria-hidden="true"></i> Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
   <div class="col-sm-12 col-lg-6 col-md-12">
     <div class="card welcom">
       <div class="card-header barCard">
         <div class="card-title">
-          Location Table <span style="float: right;"> <input type="text" class="form-control" placeholder="Search location"  ></span>
+          Location Table
+          <span style="float: right">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search location"
+              [(ngModel)]="searchfilter"
+            />
+          </span>
         </div>
       </div>
-      <div class=" card-body">
+      <div class="card-body">
         <div style="display: block">
           <table class="table table-hover">
             <thead>
@@ -41,20 +58,39 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Action</th>
-
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let location of hotelLocationList; let i=index">
-                <th scope="row">{{i+1}}</th>
-                <td>{{location?.name}}</td>
-                <td><button class="btn btn"><i class="fa fa-trash" style="color: #00b98e;"></i></button>
-                  <button class="btn btn"><i class="fa fa-edit" style="color: #f0c356;"></i></button>
-                 </td>
+              <tr
+                *ngFor="
+                  let location of hotelLocationList
+                    | filter: searchfilter
+                    | paginate: config;
+                  let i = index
+                "
+              >
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ location?.name }}</td>
+                <td>
+                  <button class="btn btn">
+                    <i class="fa fa-trash" style="color: #00b98e"></i>
+                  </button>
+                  <button class="btn btn">
+                    <i class="fa fa-edit" style="color: #f0c356"></i>
+                  </button>
+                </td>
               </tr>
             </tbody>
+
+            <!-- in case you want to show empty message -->
+            <div *ngIf="(hotelLocationList | filter: searchfilter).length === 0">
+             <p class="emptyMessage">No matching Result</p>
+            </div>
           </table>
         </div>
+        <pagination-controls
+          (pageChange)="pageChanged($event)"
+        ></pagination-controls>
       </div>
     </div>
   </div>
