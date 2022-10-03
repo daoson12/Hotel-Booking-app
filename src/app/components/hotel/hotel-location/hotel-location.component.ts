@@ -1,8 +1,8 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SessionService } from './../../../security/helper/session.service';
 import { HotelService } from './../hotel.service';
 import { Component, OnInit } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
+import { first } from 'rxjs';
 @Component({
   selector: 'app-hotel-location',
   templateUrl: './hotel-location.component.html',
@@ -15,7 +15,8 @@ export class HotelLocationComponent implements OnInit {
   searchfilter!:any;
   constructor(
     private hotelService: HotelService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
@@ -40,12 +41,20 @@ export class HotelLocationComponent implements OnInit {
   }
 
   addLocation() {
-    this.hotelService.createLocation(this.locationForm.value).subscribe(
-      (res:any)=>{
+    this.hotelService.createLocation(this.locationForm.value)
+    .pipe(first())
+    .subscribe({
+      next:(res:any) =>{
         console.log(res);
-        this.getAllLocation()
-      }
-    )
+
+        this.toastr.success(res.message)
+      },
+      error:(error)=>{
+        this.toastr.error(error.error.message)
+        console.log('error',error.error.message);
+      },
+      complete:()=>{}
+    });
   }
 
   pageChanged(event:any){
