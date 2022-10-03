@@ -46,8 +46,8 @@ export class HotelLocationComponent implements OnInit {
     .subscribe({
       next:(res:any) =>{
         console.log(res);
-
         this.toastr.success(res.message)
+        this.getAllLocation()
       },
       error:(error)=>{
         this.toastr.error(error.error.message)
@@ -67,6 +67,7 @@ export class HotelLocationComponent implements OnInit {
     .subscribe({
       next:(res:any) =>{
         this.toastr.success(res.message)
+        this.getAllLocation()
       },
       error:(error)=>{
         this.toastr.error(error.error.message)
