@@ -41,6 +41,5 @@ export class HotelLocationComponent implements OnInit {
         this.getAllLocation()
       }
     )
-
   }
 }
