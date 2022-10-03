@@ -40,24 +40,17 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Action</th>
 
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-
+              <tr *ngFor="let location of hotelLocationList; let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{location?.name}}</td>
+                <td><button class="btn btn"><i class="fa fa-trash" style="color: green;"></i></button>
+                  <button class="btn btn"><i class="fa fa-edit" style="color: red;"></i></button>
+                 </td>
               </tr>
             </tbody>
           </table>
