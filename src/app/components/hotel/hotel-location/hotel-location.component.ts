@@ -61,6 +61,7 @@ export class HotelLocationComponent implements OnInit {
     this.config.currentPage = event;
   }
 
+
   deleteLocation(name: string){
     this.hotelService.deleteLocation(name)
     .pipe(first())
@@ -71,7 +72,6 @@ export class HotelLocationComponent implements OnInit {
       },
       error:(error)=>{
         this.toastr.error(error.error.message)
-
       },
       complete:()=>{}
     })
