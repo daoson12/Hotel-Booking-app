@@ -13,4 +13,8 @@ export class HotelService {
   getAllLocation(){
     return this.http.get(this.Url + "location/getAll",{observe:"response"} )
   }
+
+  createLocation(value:any){
+    return this.http.post(this.Url +"location/add", value)
+  }
 }

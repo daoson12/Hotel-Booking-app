@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SessionService } from './../../../security/helper/session.service';
 import { HotelService } from './../hotel.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,16 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelLocationComponent implements OnInit {
   hotelLocationList: any;
+  locationForm: any = FormGroup;
+
   constructor(
     private hotelService: HotelService,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
-    this.hotelService.getAllLocation().subscribe((res: any) => {
+    this.locationForm = this.fb.group({
+      name: ['', Validators.required],
+    });
 
+    this.getAllLocation()
+  }
+
+
+  getAllLocation(){
+    this.hotelService.getAllLocation().subscribe((res: any) => {
       this.hotelLocationList = res.body;
       console.log(this.hotelLocationList);
     });
+  }
+
+  addLocation() {
+    this.hotelService.createLocation(this.locationForm.value).subscribe(
+      (res:any)=>{
+        console.log(res);
+        this.getAllLocation()
+      }
+    )
+
   }
 }
