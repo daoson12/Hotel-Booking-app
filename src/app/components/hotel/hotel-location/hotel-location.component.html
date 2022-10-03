@@ -72,10 +72,10 @@
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ location?.name }}</td>
                 <td>
-                  <button class="btn btn">
-                    <i class="fa fa-trash" style="color: #00b98e"></i>
+                  <button class="btn btn" (click)="deleteLocation(location?.name)">
+                    <i class="fa fa-trash" style="color: red"></i>
                   </button>
-                  <button class="btn btn">
+                  <button class="btn btn" >
                     <i class="fa fa-edit" style="color: #f0c356"></i>
                   </button>
                 </td>

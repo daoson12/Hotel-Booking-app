@@ -10,6 +10,8 @@ export class HotelService {
   constructor(private http: HttpClient) {}
 
 
+
+//Location
   getAllLocation(){
     return this.http.get(this.Url + "location/getAll",{observe:"response"} )
   }
@@ -17,4 +19,11 @@ export class HotelService {
   createLocation(value:any){
     return this.http.post(this.Url +"location/add", value)
   }
+
+  deleteLocation(name:any){
+    return this.http.delete(`${this.Url}location/delete/${name}`)
+  }
+//location
+
+
 }

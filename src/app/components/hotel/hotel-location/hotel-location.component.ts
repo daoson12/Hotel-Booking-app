@@ -60,4 +60,21 @@ export class HotelLocationComponent implements OnInit {
   pageChanged(event:any){
     this.config.currentPage = event;
   }
+
+  deleteLocation(id: string){
+    this.hotelService.deleteLocation(id)
+    .pipe(first())
+    .subscribe({
+      next:(res:any) =>{
+        this.toastr.success(res.message)
+      },
+      error:(error)=>{
+        this.toastr.error(error.error.message)
+
+      },
+      complete:()=>{}
+    })
+
+  }
+
 }
